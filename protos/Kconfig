@@ -1,0 +1,11 @@
+menuconfig SPOTIFY_PROTOBUF
+	bool "Protobuf Components of Library"
+	select NANOPB
+	help
+	  Protobuf Components of Library
+
+if SPOTIFY_PROTOBUF
+
+# Currently unused, could eventually be used to override .options parameters
+
+endif # SPOTIFY_PROTOBUF

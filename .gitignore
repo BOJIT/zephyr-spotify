@@ -1,0 +1,24 @@
+# Ignore build files
+/generated/*
+
+# Protocol Buffers generated files
+*.pb.c
+*.pb.h
+
+# VSCode
+.vscode/settings.json
+.vscode/cpp.code-snippets
+.vscode/python.code-snippets
+.vscode/shell.code-snippets
+
+# Environments
+.env
+.venv
+.west
+nanopb
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info

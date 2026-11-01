@@ -1,0 +1,44 @@
+import "nanopb.proto";
+
+// A minimal set of protobuf messages required to auth through login5, with a stored credential.
+message StoredCredential {
+  option (nanopb_msgopt).type = FT_CALLBACK;
+  required string username = 1;
+  required bytes data = 2;
+}
+
+message ClientInfo {
+  option (nanopb_msgopt).type = FT_CALLBACK;
+  required string client_id = 1;
+  required string device_id = 2;
+}
+
+message LoginRequest {
+    option (nanopb_msgopt).type = FT_CALLBACK;
+    required ClientInfo client_info = 1;
+    required StoredCredential stored_credential = 100;
+}
+
+message LoginOk {
+    option (nanopb_msgopt).type = FT_CALLBACK;
+    required string access_token = 2;
+    optional int32 access_token_expires_in = 4;
+}
+
+message LoginResponse {
+    option (nanopb_msgopt).type = FT_CALLBACK;
+    optional LoginOk ok = 1;
+    optional LoginError error = 2;
+}
+
+enum LoginError {
+    UNKNOWN_ERROR = 0;
+    INVALID_CREDENTIALS = 1;
+    BAD_REQUEST = 2;
+    UNSUPPORTED_LOGIN_PROTOCOL = 3;
+    TIMEOUT = 4;
+    UNKNOWN_IDENTIFIER = 5;
+    TOO_MANY_ATTEMPTS = 6;
+    INVALID_PHONENUMBER = 7;
+    TRY_AGAIN_LATER = 8;
+}

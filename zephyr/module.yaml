@@ -1,0 +1,6 @@
+name: zephyr-spotify
+build:
+  cmake: .
+  kconfig: Kconfig
+  depends:
+    - nanopb

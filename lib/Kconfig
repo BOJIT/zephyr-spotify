@@ -1,0 +1,8 @@
+menuconfig SPOTIFY_LIB
+	bool "Zephyr Integration of Spotify Connect"
+	help
+	  Zephyr Integration of Spotify Connect
+
+if SPOTIFY_LIB
+
+endif # SPOTIFY_LIB
