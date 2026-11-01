@@ -15,4 +15,5 @@ zephyr_nanopb_sources(zephyr_spotify
 )
 
 target_include_directories(zephyr_spotify PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(zephyr_spotify PUBLIC ${ZEPHYR_NANOPB_MODULE_DIR})
 add_dependencies(zephyr_spotify nanopb_generated_headers)

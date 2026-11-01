@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 import "nanopb.proto";
 
 // A minimal set of protobuf messages required to auth through login5, with a stored credential.

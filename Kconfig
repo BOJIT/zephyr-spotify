@@ -1,2 +1,8 @@
+menuconfig SPOTIFY
+	bool "Spotify Connect Library for Zephyr"
+	help
+	  Spotify Connect Library for Zephyr
+
+
 rsource "lib/Kconfig"
 rsource "protos/Kconfig"
